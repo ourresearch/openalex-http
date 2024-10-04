@@ -1,0 +1,54 @@
+type,regex,profile,params,id,parent_id,priority
+url,journals\.healio\.com,api,,62,,1
+url,royalsocietypublishing\.org,api,,59,,1
+url,iopscience\.iop\.org,api,,51,52,1
+url,www\.ejog\.org,api,,61,,1
+url,ahajournals\.org,proxy,,7,,1
+url,ashpublications\.org,proxy,,8,,1
+url,biomedcentral\.com,proxy,,9,,1
+url,biorxiv\.org,proxy,,10,,1
+url,brazilianjournals\.com,proxy,,11,,1
+url,cochranelibrary\.com,proxy,,12,,1
+url,degruyter\.com,proxy,,13,,1
+url,escholarship\.org,proxy,,14,,1
+url,exlibrisgroup\.com,proxy,,15,,1
+url,explore\.bps\.org\.uk,proxy,,16,,1
+url,jci\.org,proxy,,17,,1
+url,nature\.com,proxy,,18,,1
+url,nejm\.org,proxy,,19,,1
+url,researchsquare\.com,proxy,,20,,1
+url,rmit\.edu\.au,proxy,,21,,1
+url,sciencedirect\.com,proxy,,22,,1
+url,springer\.com,proxy,,23,,1
+url,springeropen\.com,proxy,,24,,1
+url,academic\.oup\.com,api,,26,,1
+url,pubsonline\.informs\.org,api,,27,,1
+url,journals\.asm\.org,api,,28,,1
+url,oatext\.com,api,,29,,1
+url,pnas\.org,api,,30,,1
+url,pubs\.acs\.org,api,,31,,1
+url,science\.org,api,,32,,1
+url,opticsjournal\.net,api,,34,,1
+url,archives\.datapages\.com,api,,35,,1
+url,pdcnet\.org,api,,36,,1
+url,csj\.jp,api,,37,,1
+url,asha\.org,api,,38,,1
+url,jstor\.org,api,,39,,1
+url,sagepub\.com,api,,40,,1
+url,brill\.com,api,,41,,1
+url,persee\.fr,api,,42,,1
+url,cell\.com,api,,43,,1
+url,europa\.eu,api,,44,,1
+url,tandfonline\.com,api,,45,,1
+doi,10\.1103/PhysRevC,api,"{""actions"": [{""action"": ""waitForSelector"", ""selector"": {""type"": ""css"", ""state"": ""visible"", ""value"": ""section.authors div.help-message""}}, {""action"": ""click"", ""selector"": {""type"": ""css"", ""value"": ""section.authors div.help-message""}}, {""action"": ""waitForSelector"", ""timeout"": 15, ""selector"": {""type"": ""css"", ""state"": ""visible"", ""value"": ""section.authors ul li""}}], ""javascript"": true, ""browserHtml"": true, ""httpResponseHeaders"": true}",5,,1
+url,nejm\.org,api,,54,19,1
+doi,10\.1016/j\.physletb,api,"{""actions"": [{""action"": ""waitForSelector"", ""selector"": {""type"": ""css"", ""state"": ""visible"", ""value"": ""#show-more-btn""}}, {""action"": ""click"", ""selector"": {""type"": ""css"", ""value"": ""#show-more-btn""}}, {""action"": ""waitForSelector"", ""timeout"": 15, ""selector"": {""type"": ""css"", ""state"": ""visible"", ""value"": ""div.author-collaboration div.author-group""}}], ""javascript"": true, ""browserHtml"": true, ""httpResponseHeaders"": true}",2,,1
+url,sciencedirect\.com,api,,33,22,1
+url,scholarship\.libraries\.rutgers\.edu\/esploro(?!.*\/fulltext),api,"{""javascript"": true, ""browserHtml"": true, ""httpResponseHeaders"": true}",63,,1
+url,saemobilus\.sae\.org/articles,api,"{""actions"": [{""action"": ""waitForSelector"", ""selector"": {""type"": ""css"", ""state"": ""visible"", ""value"": ""#itemDnlBtn""}}], ""javascript"": true, ""browserHtml"": true, ""httpResponseHeaders"": true}",64,,1
+url,iopscience\.iop\.org,proxy,,52,,1
+url,wiley\.com,proxy,,55,,1
+url,wiley\.com,api,,56,55,1
+url,adsabs\.harvard\.edu,api,"{""actions"": [{""action"": ""waitForSelector"", ""selector"": {""type"": ""css"", ""state"": ""visible"", ""value"": ""#toggle-aff""}}, {""action"": ""click"", ""selector"": {""type"": ""css"", ""value"": ""#toggle-aff""}}, {""action"": ""waitForSelector"", ""timeout"": 15, ""selector"": {""type"": ""css"", ""state"": ""visible"", ""value"": ""span.affiliation""}}], ""javascript"": true, ""browserHtml"": true, ""httpResponseHeaders"": true}",3,,1
+url,doi\.org/10\.2196,api,"{""actions"": [{""action"": ""waitForSelector"", ""selector"": {""type"": ""css"", ""state"": ""visible"", ""value"": ""a[aria-label='Authors']""}}, {""action"": ""click"", ""selector"": {""type"": ""css"", ""value"": ""a[aria-label='Authors']""}}, {""action"": ""waitForSelector"", ""timeout"": 15, ""selector"": {""type"": ""css"", ""state"": ""visible"", ""value"": ""p.authors-list""}}], ""javascript"": true, ""browserHtml"": true, ""httpResponseHeaders"": true}",57,,1
+url,secure\.jbs\.elsevier,api,,58,,1
