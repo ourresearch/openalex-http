@@ -1,1 +1,1 @@
-include openalex_http/legacy/data *
+include openalex_http/legacy/data/*
