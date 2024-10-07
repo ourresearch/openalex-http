@@ -18,8 +18,8 @@ from tenacity import retry, stop_after_attempt, wait_exponential, \
     retry_if_result
 import requests.exceptions
 
+from openalex_http.log import get_logger
 from .zyte_domain_policy import get_matching_policies
-from log import get_logger
 from .util import DelayedAdapter
 from .util import elapsed
 from .util import get_link_target
