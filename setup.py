@@ -7,7 +7,7 @@ setup(
     install_requires=open('requirements.txt').read().splitlines(),
     include_package_data=True,
     package_data={
-        'openalex_http.legacy': ['data/*'],
+        'openalex_http.legacy': ['data/*.csv', 'data/*.crt'],
     },
     url='https://github.com/ourresearch/openalex-http',
     license='',
