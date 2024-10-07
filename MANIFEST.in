@@ -1,0 +1,1 @@
+recursive-include openalex_http/legacy/data *
