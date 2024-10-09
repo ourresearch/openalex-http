@@ -125,7 +125,7 @@ def chooser_redirect(r):
     return None
 
 
-def keep_redirecting(r, publisher):
+def keep_redirecting(r):
     # don't read r.content unless we have to, because it will cause us to download the whole thig instead of just the headers
 
     if target := chooser_redirect(r):
@@ -159,15 +159,13 @@ def keep_redirecting(r, publisher):
                 return redirect_url
 
     # 10.1097/00003643-201406001-00238
-    if publisher and is_same_publisher(publisher,
-                                       "Ovid Technologies (Wolters Kluwer Health)"):
-        matches = re.findall(r"OvidAN = '(.*?)';", r.text_small(),
-                             re.IGNORECASE)
-        if matches:
-            an_number = matches[0]
-            redirect_url = "http://content.wkhealth.com/linkback/openurl?an={}".format(
-                an_number)
-            return redirect_url
+    matches = re.findall(r"OvidAN = '(.*?)';", r.text_small(),
+                         re.IGNORECASE)
+    if matches:
+        an_number = matches[0]
+        redirect_url = "http://content.wkhealth.com/linkback/openurl?an={}".format(
+            an_number)
+        return redirect_url
 
     # 10.1097/01.xps.0000491010.82675.1c
     hostname = urlparse(r.url).hostname
@@ -287,7 +285,6 @@ def call_requests_get(url=None,
                       read_timeout=300,
                       connect_timeout=300,
                       stream=False,
-                      publisher=None,
                       session_id=None,
                       ask_slowly=False,
                       verify=False,
@@ -434,7 +431,7 @@ def call_requests_get(url=None,
             if r.status_code == 200:
                 num_browser_redirects += 1
 
-            redirect_url = keep_redirecting(r, publisher)
+            redirect_url = keep_redirecting(r)
             if redirect_url:
                 if "hcvalidate.perfdrive.com" in redirect_url:
                     # do not follow this redirect with proxy
