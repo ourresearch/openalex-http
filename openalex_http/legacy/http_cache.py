@@ -140,10 +140,7 @@ def keep_redirecting(r):
                                                                    'https://')
         logger.info('30x redirect: {}'.format(location))
 
-        if location.startswith(
-                'https://academic.oup.com/crawlprevention/governor') or re.match(
-            r'https?://academic\.oup\.com/.*\.pdf', r.url):
-            return location
+        return location
 
     # 10.5762/kais.2016.17.5.316
     if "content-length" in r.headers:
