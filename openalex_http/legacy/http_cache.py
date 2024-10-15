@@ -4,9 +4,10 @@ import inspect
 import os
 import re
 from dataclasses import dataclass
+from io import BytesIO
 from time import sleep
 from time import time
-from typing import Optional
+from typing import Optional, IO
 from urllib.parse import urljoin, urlparse
 import json
 
@@ -77,17 +78,17 @@ class ResponseObject:
                 f'Bad status code for URL {self.url}: {self.status_code}')
 
 
-def _create_cert_bundle():
-    crt_file = os.path.join(os.path.dirname(__file__), 'data', 'custom-certs.crt')
+def _create_cert_bundle() -> IO[bytes]:
     crawlera_ca = os.path.join(os.path.dirname(__file__), 'data', 'crawlera-ca.crt')
 
-    with open(crt_file, 'w') as combined_certs:
-        for source in [certifi.where(), crawlera_ca]:
-            with open(source, 'r') as s:
-                for line in s:
-                    combined_certs.write(line)
+    combined_certs: BytesIO = BytesIO()
 
-    return crt_file
+    for source in [certifi.where(), crawlera_ca]:
+        with open(source, 'r') as s:
+            for line in s:
+                combined_certs.write(line.encode())
+
+    return combined_certs
 
 
 _cert_bundle = _create_cert_bundle()
