@@ -501,9 +501,9 @@ def http_get(url,
                               ask_slowly=ask_slowly,
                               verify=verify,
                               cookies=cookies)
-    except tenacity.RetryError:
+    except tenacity.RetryError as e:
         logger.info(f"tried too many times for {url}")
-        raise
+        raise e
     logger.info("finished http_get for {} in {} seconds".format(url, elapsed(
         start_time, 2)))
     return r
