@@ -288,7 +288,8 @@ def is_retry_status(response):
 @retry(stop=stop_after_attempt(2),
        wait=wait_exponential(multiplier=1, min=4, max=10),
        retry=retry_if_result(is_retry_status),
-       before_sleep=before_retry)
+       before_sleep=before_retry,
+       reraise=True)
 def call_requests_get(url=None,
                       headers=None,
                       read_timeout=300,
