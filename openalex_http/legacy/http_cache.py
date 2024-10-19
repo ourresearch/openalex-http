@@ -327,8 +327,8 @@ def call_requests_get(url=None,
         headers["X-Crawlera-Timeout"] = "{}".format(
             300 * 1000)  # tomas recommended 300 seconds in email
 
-        read_timeout = 600
-        connect_timeout = 600
+        read_timeout = 60
+        connect_timeout = 10
     else:
         if 'User-Agent' not in headers:
             headers['User-Agent'] = request_ua_headers()['User-Agent']
